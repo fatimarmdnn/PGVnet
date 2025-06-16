@@ -11,8 +11,8 @@ env/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 #*.ipynb
-Generate_PGV_Map copy.ipynb
-a.ipnyb
+.Generate_PGV_Map copy.ipynb
+.a.ipnyb
 
 # Data files
 *.npz
