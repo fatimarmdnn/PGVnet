@@ -5,11 +5,9 @@ from tqdm import tqdm
 from xgboost_utils import prep_input_map
 
 
-def generate_sparse_pgv(
-    source_params_path: str,    
-    station_coords_path: str,
-    model_dir_0: str,
-    model_dir_1: str,
+def generate_sparse_pgv(  
+    station_coords_path: str,   
+    models_dir : str,
     output_path: str,
     data_tag: str = None,
     spacing_km: int = 4
@@ -28,6 +26,7 @@ def generate_sparse_pgv(
     """
 
     # Load inputs
+    source_params_path =  f'./data/forward_db/source_params_{data_tag}.npz'
     source_params = np.load(source_params_path)['source_params']
     station_coords = np.load(station_coords_path)['station_coords']
     
@@ -36,6 +35,9 @@ def generate_sparse_pgv(
 
     X = prep_input_map(source_params, station_coords)
     pred_pgv = np.zeros((n_sources, n_receivers, 2))
+    
+    model_dir_0 = os.path.join(models_dir, 'xgb_models_0')
+    model_dir_1 = os.path.join(models_dir, 'xgb_models_1')
 
     # Predict PGV for each receiver
     for receiver_idx in tqdm(range(n_receivers), desc=f"Predicting Sparse PGV Maps for {n_sources} sources"):
@@ -102,22 +104,18 @@ def resize_with_aligned_corners(data, target_size):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-
-    parser.add_argument("--source_params", type=str, required=True)
-    parser.add_argument("--station_coords", type=str, required=True)
-    parser.add_argument("--model_dir_0", type=str, required=True)
-    parser.add_argument("--model_dir_1", type=str, required=True)
-    parser.add_argument("--output_path", type=str, default="data/")
+    
+    parser.add_argument("--station_coords", type=str, default = "data/station_coords_sparse.npz",  )
+    parser.add_argument("--models_dir", type=str, required=True)
+    parser.add_argument("--output_path", type=str, default="data/step1_preds")
     parser.add_argument("--data_tag", type=str, required=True, help="Tag for the output data file")
     parser.add_argument("--spacing_km", type=int, required = True, choices=[4, 6, 8], default=4, help="Grid spacing in km (supports 4, 6, or 8)")
 
     args = parser.parse_args()
 
     generate_sparse_pgv(
-        source_params_path=args.source_params,
         station_coords_path=args.station_coords,
-        model_dir_0=args.model_dir_0,
-        model_dir_1=args.model_dir_1,
+        models_dir=args.models_dir,
         output_path=args.output_path,
         data_tag=args.data_tag,
         spacing_km=args.spacing_km
