@@ -10,7 +10,7 @@ env/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
-*.ipynb
+#*.ipynb
 
 # Data files
 *.npz
