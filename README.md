@@ -14,7 +14,7 @@ This repository contains the code and models described in the manuscript:
 
 ```bash
 # Clone the repository
-git clone https://github.com/fatimarmdnn/PGVnet-Rapid-Physics-Consistent-PGV-Maps-.git
+git clone https://github.com/fatimarmdnn/PGVnet.git
 cd pgvnet
 
 # Create and activate a virtual environment, then install dependencies
