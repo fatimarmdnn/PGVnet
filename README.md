@@ -54,13 +54,13 @@ This will:
 - Load the trained XGBoost models for each receiver
 - Generate sparse PGV predictions to be used as input for the super-resolution model in Step 2
 
----
-
 **Required arguments are:**
 
 - `--models_dir`: Path to directory with trained XGBoost models 
 - `--data_tag`: (e.g. 50_50 = 50 locations × 50 samples)
 - `--spacing_km`: Grid spacing in km (4, 6, or 8)
+
+---
 
 ### Step 2: Train the Super-Resolution Model
 
@@ -92,12 +92,12 @@ python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_
 - Evaluates model on the test set
 - Outputs reconstructed PGV fields and performance metrics
 
----
-
 **Required arguments are:**
 
 - `--mode`,  `--data_tag`, `--downample_factor`
 - `--results_dir`: Path to the directory containing the trained model checkpoints
+
+---
 
 ## Outputs
 
