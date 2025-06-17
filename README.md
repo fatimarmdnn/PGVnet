@@ -46,7 +46,7 @@ You can run the pipeline either via the notebook `Framework Pipeline.ipynb` or f
 ### Step 1: Generate Sparse PGV Maps (XGBoost)
 
 ```bash
-python src/xgboost_predictor.py --models_dir /media/wolf6819/Elements/models --data_tag 30_50 --spacing_km 4
+python src/xgboost_predictor.py --models_dir /media/wolf6819/Elements/models --data_tag 50_50 --spacing_km 4
 ```
 
 This will:
@@ -59,7 +59,7 @@ This will:
 ### Step 2: Train the Super-Resolution Model
 
 ```bash
-python encoderMLP_predictor.py --mode train --data_tag 50_50_x4 --downsample_factor 4 
+python src/encoderMLP_predictor.py --mode train --data_tag 50_50_x4 --downsample_factor 4 
 ```
 
 This will:
@@ -80,7 +80,7 @@ This will:
 ### Step 3: Evaluate the Model
 
 ```bash
-python main.py --mode test --data_tag 30_10
+python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4
 ```
 
 - Loads the best saved checkpoint

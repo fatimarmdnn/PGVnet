@@ -98,7 +98,7 @@ if __name__ == "__main__":
         inp_data, out_data = process_data(config)
 
         # Number of sources and repeats per source
-        num_sources        = 50
+        num_sources        = int(config.data_tag.split('_')[0]) 
         samples_per_source = 50
         total_samples = num_sources * samples_per_source
 
