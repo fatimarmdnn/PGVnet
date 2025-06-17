@@ -18,12 +18,10 @@ def generate_sparse_pgv(
     Generates sparse PGV maps using XGBoost models and saves them as a .npz file.
 
     Args:
-        source_params_path : Path to .npz file with 'source_params' key
         station_coords_path: Path to .npz file with 'station_coords' key
-        model_dir_0        : Path to directory with XGBoost models for component 0 (East)
-        model_dir_1        : Path to directory with XGBoost models for component 1 (North)
+        models_dir         : Path to directory with trained XGBoost models 
         output_path        : Directory where the output .npz file will be saved
-        data_tag           : Optional data_Stag for naming the output file
+        data_tag           : e.g 50_50 corresponds to 50 sources location and 50 mechanism per source location
         spacing_km         : Grid spacing in km (4, 6, or 8)
     """
 
@@ -123,8 +121,8 @@ if __name__ == "__main__":
 
     generate_sparse_pgv(
         station_coords_path=args.station_coords,
-        models_dir=args.models_dir,
-        output_path=args.output_path,
-        data_tag=args.data_tag,
-        spacing_km=args.spacing_km
+        models_dir         =args.models_dir,
+        output_path        =args.output_path,
+        data_tag           =args.data_tag,
+        spacing_km         =args.spacing_km
     )

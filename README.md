@@ -56,6 +56,12 @@ This will:
 
 ---
 
+**Required arguments are:**
+
+- `--models_dir`: Path to directory with trained XGBoost models 
+- `--data_tag`: (e.g. 50_50 = 50 locations × 50 samples)
+- `--spacing_km`: Grid spacing in km (4, 6, or 8)
+
 ### Step 2: Train the Super-Resolution Model
 
 ```bash
@@ -68,12 +74,11 @@ This will:
 - Train the encoderMLP network
 - Save model checkpoints and learning curves to `results/`
 
-**Optional arguments include:**
+**Required arguments are:**
 
-- `--enc_type`: Choose from `edsr`, `dilated`, or `unet`
-- `--fourier_features`: `True` or `False`
-- `--n_samp_pts_per_patch`: Number of sample points per patch
-- `--batch_size`, `--learning_rate`, etc.
+- `--mode`: Choose from `train`, `test`, or `inference`
+- `--data_tag`: (e.g. 50_50_x4 = 50 locations × 50 samples, downsampled ×4)
+- `--downample_factor`: Downsampling factor to apply (e.g. 4)
 
 ---
 
@@ -89,13 +94,18 @@ python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_
 
 ---
 
+**Required arguments are:**
+
+- `--mode`,  `--data_tag`, `--downample_factor`
+- `--results_dir`: Path to the directory containing the trained model checkpoints
+
 ## Outputs
 
 The model outputs and logs are saved under `results/<run_id>/`. Key files include:
 
 - `best_model.pth`          : Trained model weights
 - `pgv_map_sim*_comp*.png`  : Visual comparisons for an example sim and example component
-- `test_preds.npy`, `test_gts.npy`: NumPy dumps of the fields
+- `test_preds.npy`, `test_gts.npy`: NumPy dumps of the true and predicted pgv maps
 - `learning_curves.png`: Training loss/metric curves
 - `test_metrics.txt`   : Quantitative evaluation metrics
 
