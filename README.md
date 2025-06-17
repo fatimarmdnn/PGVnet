@@ -80,7 +80,7 @@ This will:
 ### Step 3: Evaluate the Model
 
 ```bash
-python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4
+python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_factor 4 --results_dir ./results/20250617_091441_28edf9
 ```
 
 - Loads the best saved checkpoint
