@@ -104,7 +104,7 @@ python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_
 The model outputs and logs are saved under `results/<run_id>/`. Key files include:
 
 - `best_model.pth`          : Trained model weights
-- `pgv_map_sim*_comp*.png`  : Visual comparisons for an example sim and example component
+- `test_map_sim*_comp*.png` : True vs Predicted PGV maps of an example event along component 0 (East) or 1 (North)
 - `test_preds.npy`, `test_gts.npy`: NumPy dumps of the true and predicted pgv maps
 - `learning_curves.png`: Training loss/metric curves
 - `test_metrics.txt`   : Quantitative evaluation metrics

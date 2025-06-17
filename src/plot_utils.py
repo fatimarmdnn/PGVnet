@@ -21,8 +21,8 @@ def generate_test_images(hres_data_test, re_field_hres, sim_nb, comp):
     
     fig, axs = plt.subplots(1, 3, figsize=(17, 5))
 
-    pgv_norm   = mpl.colors.Normalize(vmin=0, vmax=0.75 * np.max(hres_data_test[sim_nb, :, :, comp]))
-    error_norm = mpl.colors.Normalize(vmin=0, vmax=0.75 * np.max(error))     
+    pgv_norm   = mpl.colors.Normalize(vmin=0, vmax=np.max(hres_data_test[sim_nb, :, :, comp]))
+    error_norm = mpl.colors.Normalize(vmin=0, vmax=np.max(error))     
 
     contour1 = axs[0].contourf(hres_data_test[sim_nb, :, :, comp], cmap='plasma', norm=pgv_norm, levels=10)
     contour2 = axs[1].contourf(re_field_hres[sim_nb, :, :, comp], cmap='plasma', norm=pgv_norm, levels=10)
