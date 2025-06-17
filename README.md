@@ -70,7 +70,7 @@ python src/encoderMLP_predictor.py --mode train --data_tag 50_50_x4 --downsample
 
 This will:
 
-- Load and preprocess your dataset
+- Load and preprocess the sparse maps dataset
 - Train the encoderMLP network
 - Save model checkpoints and learning curves to `results/`
 
