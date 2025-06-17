@@ -53,7 +53,7 @@ def regular_nd_grid_interpolation_coefficients(grid, query_pts, xmin=0., xmax=1.
     ind1 = ind0 + 1
     ind01 = torch.stack((ind0, ind1), dim=0) # (2, batch, num_points, dim)
     tmp = torch.tensor([0, 1], dtype=torch.long)
-    com_ = torch.stack(torch.meshgrid(tuple([tmp] * dim)), dim=-1).view(-1, dim)
+    com_ = torch.stack(torch.meshgrid(*([tmp] * dim), indexing='ij'), dim=-1).view(-1, dim)
     dim_ = torch.arange(dim).repeat(com_.shape[0], 1) # (2**dim, dim)
     ind_ = ind01[com_, ..., dim_]   # (2**dim, dim, batch, num_points)
     ind_n = ind_.permute(2, 3, 0, 1) # (batch, num_points, 2**dim, dim)

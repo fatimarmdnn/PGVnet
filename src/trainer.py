@@ -143,8 +143,8 @@ def test(inp_data_test, out_data_test, results_dir, checkpoint_path=None, plot=T
         selected_pairs = random.sample(all_pairs, 20)
 
         for sim_nb, comp in selected_pairs:
-            image = plot_utils.generate_test_images(field_ground_truth, field_reconstructed, sim_nb, comp)
-            image.save(os.path.join(results_dir, f'test_image_sim{sim_nb}_comp{comp}.png'))
+            map = plot_utils.generate_test_images(field_ground_truth, field_reconstructed, sim_nb, comp)
+            map.save(os.path.join(results_dir, f'test_map_sim{sim_nb}_comp{comp}.png'))
 
     test_ssim = plot_utils.compute_ssim_field(field_ground_truth, field_reconstructed)
     print(f"Test SSIM: {test_ssim:.4f}")

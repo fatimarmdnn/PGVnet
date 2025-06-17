@@ -128,7 +128,6 @@ if __name__ == "__main__":
         config.test_ids = test_ids
 
         train(config, inp_data_train, out_data_train)
-        #test(inp_data_test, out_data_test, results_dir)
             
     elif config.mode == 'test':
         if not config.results_dir:

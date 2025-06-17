@@ -42,7 +42,7 @@ def generate_sparse_pgv(
     model_dir_1 = os.path.join(models_dir, 'xgb_models_1')
 
     # Predict PGV for each receiver
-    for receiver_idx in tqdm(range(n_receivers), desc=f"Predicting Sparse PGV Maps for {n_sources} sources"):
+    for receiver_idx in tqdm(range(n_receivers), desc=f"Predicting Sparse PGV Maps for {n_sources} events"):
         model_path0 = os.path.join(model_dir_0, f"xgb_receiver_{receiver_idx:03d}.json")
         model_path1 = os.path.join(model_dir_1, f"xgb_receiver_{receiver_idx:03d}.json")
 

@@ -46,7 +46,7 @@ You can run the pipeline either via the notebook `Framework Pipeline.ipynb` or f
 ### Step 1: Generate Sparse PGV Maps (XGBoost)
 
 ```bash
-python src/xgboost_predictor.py --models_dir /media/wolf6819/Elements/ML_data/ --data_tag 50_50 --spacing_km 4
+python src/xgboost_predictor.py --models_dir /media/wolf6819/Elements/models --data_tag 30_50 --spacing_km 4
 ```
 
 This will:
