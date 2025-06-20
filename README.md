@@ -77,7 +77,7 @@ This will:
 **Required arguments are:**
 
 - `--mode`: Choose from `train`, `test`, or `inference`
-- `--data_tag`: (e.g. 50_50_x4 = 50 locations × 50 samples, downsampled ×4)
+- `--data_tag`: (e.g. 50_50_x4 = 50 locations × 50 mechanims, downsampled ×4)
 - `--downample_factor`: Downsampling factor to apply (e.g. 4)
 
 ---
