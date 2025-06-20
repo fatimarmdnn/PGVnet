@@ -46,7 +46,7 @@ You can run the pipeline either via the notebook `Framework Pipeline.ipynb` or f
 ### Step 1: Generate Sparse PGV Maps (XGBoost)
 
 ```bash
-python src/xgboost_predictor.py --models_dir /media/wolf6819/Elements/models --data_tag 50_50 --spacing_km 4
+python src/xgboost_predictor.py --models_dir data/xgb_models --data_tag 50_50 --spacing_km 4
 ```
 
 This will:
@@ -57,7 +57,7 @@ This will:
 **Required arguments are:**
 
 - `--models_dir`: Path to directory with trained XGBoost models 
-- `--data_tag`: (e.g. 50_50 = 50 locations × 50 samples)
+- `--data_tag`  : (e.g. 50_50 = 50 locations × 50 mechanism per location)
 - `--spacing_km`: Grid spacing in km (4, 6, or 8)
 
 ---
@@ -85,7 +85,7 @@ This will:
 ### Step 3: Evaluate the Model
 
 ```bash
-python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_factor 4 --results_dir ./results/20250617_091441_28edf9
+python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_factor 4 --results_dir ./results/results_50_50
 ```
 
 - Loads the best saved checkpoint
@@ -125,6 +125,5 @@ Some code components were adapted from the following repository:
 If you use this repository in your work, please cite:
 
 ```
-F. Ramadan, T. Nissen-Meyer, P. Koelemeijer, B. Fry (2025). 
-PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps.
+
 ```

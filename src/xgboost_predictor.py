@@ -1,9 +1,8 @@
 import numpy as np
-import pickle
 import os
 from tqdm import tqdm
 from xgboost_utils import prep_input_map
-import xgboost as xgb
+from xgboost import XGBRegressor    
 
 
 
@@ -41,22 +40,18 @@ def generate_sparse_pgv(
 
     # Predict PGV for each receiver
     for receiver_idx in tqdm(range(n_receivers), desc=f"Predicting Sparse PGV Maps for {n_sources} events"):
-        model_path0 = os.path.join(model_dir_0, f"xgb_receiver_{receiver_idx:03d}.json")
-        model_path1 = os.path.join(model_dir_1, f"xgb_receiver_{receiver_idx:03d}.json")
+        model_path0 = os.path.join(model_dir_0, f"xgb_receiver_{receiver_idx}.bin")
+        model_path1 = os.path.join(model_dir_1, f"xgb_receiver_{receiver_idx}.bin")
 
-        model0 = xgb.Booster()
+        model0 = XGBRegressor()
         model0.load_model(model_path0)
 
-        model1 = xgb.Booster()
+        model1 = XGBRegressor()
         model1.load_model(model_path1)
 
-        # Convert input to DMatrix for prediction
-        dmat = xgb.DMatrix(X[:, receiver_idx, :])  # shape: (n_samples, n_features)
+        pred0 = model0.predict(X[:, receiver_idx, :])
+        pred1 = model1.predict(X[:, receiver_idx, :])   
 
-        pred0 = model0.predict(dmat)
-        pred1 = model1.predict(dmat)
-
-        # Stack predictions from both models
         pred_pgv[:, receiver_idx, :] = np.stack((pred0, pred1), axis=-1)
 
     # Format: reshape to grid and flip axes to match spatial convention in AxiSEM3D
