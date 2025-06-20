@@ -29,11 +29,12 @@ pip install -r requirements.txt
 
 ```
 PGVnet/
-├── data/                 # Contains forward DB, reciprocal DB, trained XGBoost models, and reciever coords
+├── data/                 # Contains forward DB, reciprocal DB, trained XGBoost models, and reciever coords 
 ├── src/                  # Source files for training and testing
 ├── results/              # Checkpoints, predictions, plots, and evaluation metrics
 ├── Framework_Pipeline.ipynb  # Demonstrates the full pipeline (Steps 1 & 2)
 ```
+Please note that only example data is included in this repository. The complete dataset and code are available for download from Zenodo (link provided below)
 
 ---
 
