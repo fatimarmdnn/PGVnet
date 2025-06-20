@@ -52,7 +52,7 @@ python src/xgboost_predictor.py --models_dir data/xgb_models --data_tag 50_50 --
 This will:
 
 - Load the trained XGBoost models for each receiver
-- Generate sparse PGV predictions to be used as input for the super-resolution model in Step 2
+- Generate sparse PGV maps to be used as input for the super-resolution model in Step 2
 
 **Required arguments are:**
 
@@ -62,7 +62,7 @@ This will:
 
 ---
 
-### Step 2: Train the Super-Resolution Model
+### Step 2: Train the EncoderMLP Network
 
 ```bash
 python src/encoderMLP_predictor.py --mode train --data_tag 50_50_x4 --downsample_factor 4 
@@ -82,26 +82,26 @@ This will:
 
 ---
 
-### Step 3: Evaluate the Model
+### Step 3: Evaluate the EncoderMLP
 
 ```bash
 python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_factor 4 --results_dir ./results/results_50_50
 ```
 
 - Loads the best saved checkpoint
-- Evaluates model on the test set
-- Outputs reconstructed PGV fields and performance metrics
+- Evaluates model on the test set (unseen source locations and mechanisms)
+- Outputs reconstructed PGV maps and performance metrics
 
 **Required arguments are:**
 
 - `--mode`,  `--data_tag`, `--downample_factor`
-- `--results_dir`: Path to the directory containing the trained model checkpoints
+- `--results_dir`: Path to the directory containing the trained encoderMLP checkpoints
 
 ---
 
 ## Outputs
 
-The model outputs and logs are saved under `results/<run_id>/`. Key files include:
+The network outputs and logs are saved under `results/<run_id>/`. Key files include:
 
 - `best_model.pth`          : Trained model weights
 - `test_map_sim*_comp*.png` : True vs Predicted PGV maps of an example event along component 0 (East) or 1 (North)
