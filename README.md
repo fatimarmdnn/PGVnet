@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ## Repository Structure
 
 ```
-pgvnet/
+PGVnet/
 ├── data/                 # Contains forward DB, reciprocal DB, trained XGBoost models, and reciever coords
 ├── src/                  # Source files for training and testing
 ├── results/              # Checkpoints, predictions, plots, and evaluation metrics
