@@ -82,6 +82,7 @@ def run_test(config):
     np.save(os.path.join(config.results_dir, "test_gts.npy"), gts)
 
 
+# for testing on a unified test set across the different models
 def run_inference(config):
     set_seed(int(time.time() * 1000) % (2**32))
 
@@ -151,5 +152,5 @@ if __name__ == "__main__":
         run_train(config)
     elif config.mode == "test":
         run_test(config)
-    elif config.mode == "inference":
+    elif config.mode == "inference":    
         run_inference(config)
