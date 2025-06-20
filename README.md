@@ -119,11 +119,3 @@ Some code components were adapted from the following repository:
 - [maxjiang93/space_time_pde](https://github.com/maxjiang93/space_time_pde)
 
 ---
-
-## Citation
-
-If you use this repository in your work, please cite:
-
-```
-
-```
