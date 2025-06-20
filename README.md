@@ -119,3 +119,10 @@ Some code components were adapted from the following repository:
 - [maxjiang93/space_time_pde](https://github.com/maxjiang93/space_time_pde)
 
 ---
+
+## Citation
+
+If you use PGVnet or its data in your research, please cite:
+
+> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+
