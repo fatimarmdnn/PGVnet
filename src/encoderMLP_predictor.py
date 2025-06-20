@@ -47,7 +47,7 @@ def run_train(config):
     num_sources = int(config.data_tag.split('_')[0])
     samples_per_source = 50
     total_samples = num_sources * samples_per_source
-    test_source_ids = np.random.choice(num_sources, 10, replace=False)
+    test_source_ids = np.random.choice(num_sources, 20, replace=False)
     test_ids = np.concatenate([
         np.arange(s * samples_per_source, (s + 1) * samples_per_source)
         for s in test_source_ids

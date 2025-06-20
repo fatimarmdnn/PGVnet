@@ -1,4 +1,8 @@
 # trainer.py
+
+"""
+trainer for the EncoderMLP 
+"""
 import os
 import numpy as np
 import torch
@@ -171,7 +175,6 @@ def save_config(args, filename="config.yaml", results_dir="results"):
     """
     os.makedirs(results_dir, exist_ok=True)
     filepath = os.path.join(results_dir, filename)
-    # Exclude 'test_ids' (or any other unwanted keys)
     config_dict = {k: v for k, v in vars(args).items() if k != 'test_ids'}
 
     with open(filepath, 'w') as f:

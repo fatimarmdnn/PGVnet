@@ -1,3 +1,7 @@
+"""
+preprocess sparse maps for the EncoderMLP 
+"""
+
 import os
 import numpy as np
 from typing import Dict, Tuple
