@@ -5,7 +5,6 @@
 This repository contains the code and models described in the manuscript:
 
 > **PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps**  
-> *Submitted to JGR Machine Learning (2025)*
 
 
 ---
@@ -125,5 +124,5 @@ Some code components were adapted from the following repository:
 
 If you use PGVnet or its data in your research, please cite:
 
-> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/
 
