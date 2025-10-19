@@ -3,8 +3,9 @@
 """Local implicit grid query function."""
 
 import torch
-import regular_nd_grid_interpolation as rgi
-from dataset import fourier_feature
+
+from . import regular_nd_grid_interpolation as rgi
+from .dataset import fourier_feature
 
 def query_local_implicit_grid(model, latent_grid, query_coords_norm, xmin, xmax, coords_absolute,
                                use_fourier, D, gamma):

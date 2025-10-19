@@ -47,7 +47,7 @@ PGVnet/
 
 ## Quickstart: Running the Pipeline
 
-You can run PGVnet either from the notebook (`Framework_Pipeline.ipynb`) or directly from the command line.
+You can run PGVnet either from the notebook (`demo.ipynb`) or directly from the command line.
 
 ### Step 1 — Generate Sparse PGV Maps (XGBoost)
 
@@ -83,7 +83,7 @@ This will:
 
 ---
 
-### Step 3 — Evaluate the Encoder-MLP
+### Evaluating on Held-Out Events
 
 ```bash
 python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_factor 4 --results_dir ./results/results_50_50
@@ -109,10 +109,6 @@ All outputs are stored under `results/<run_id>/`. Key files include:
 - `test_preds.npy`, `test_gts.npy` — NumPy dumps of predictions and ground truth 
 - `learning_curves.png` — training loss/metric curves 
 - `test_metrics.txt` — quantitative metrics 
-
-Example prediction:
-
-![Example PGV map](results/sample/test_map_sim0_comp0.png)
 
 ---
 

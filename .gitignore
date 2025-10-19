@@ -40,4 +40,5 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
-demo*
+demo_utils.py
+demo_extras.ipynb

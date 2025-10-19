@@ -11,8 +11,8 @@ import numpy as np
 import torch
 from datetime import datetime
 
-from preprocess import process_data
-from trainer import train, test
+from .preprocess import process_data
+from .trainer import train, test
 
 
 def set_seed(seed):

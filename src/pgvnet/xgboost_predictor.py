@@ -1,7 +1,7 @@
 import numpy as np
 import os
 from tqdm import tqdm
-from xgboost_utils import prep_input_map
+from .xgboost_utils import prep_input_map
 from xgboost import XGBRegressor    
 
 

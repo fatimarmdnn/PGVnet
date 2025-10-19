@@ -12,10 +12,10 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import random
 
-from dataset import PGVDatasetPatchesPoints
-import train_utils, test_utils, plot_utils
-import unet, edsr, implicit_net
-import losses
+from .dataset import PGVDatasetPatchesPoints
+from . import train_utils, test_utils, plot_utils
+from . import unet, edsr, implicit_net
+from . import losses
 import yaml
 import argparse
 

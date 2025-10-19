@@ -2,8 +2,8 @@ import os
 import numpy as np
 import torch
 from tqdm import tqdm
-from local_implicit_grid import query_local_implicit_grid
-import dataset as ds
+from .local_implicit_grid import query_local_implicit_grid
+from . import dataset as ds
 
 def generate_patch_indices(nx_lres, ny_lres, nx_patch, ny_patch, nb_sims, stride_x, stride_y):
     nx_start_range = np.arange(0, nx_lres - nx_patch + 1, stride_x)

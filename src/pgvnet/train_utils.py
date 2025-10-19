@@ -4,8 +4,7 @@ train utils for the EncoderMLP
 
 import torch
 import torch.nn.functional as F
-from tqdm import tqdm
-from local_implicit_grid import query_local_implicit_grid
+from .local_implicit_grid import query_local_implicit_grid
 
 def train_step(unet, imnet, data_loader, criterion, optimizer, device, config):
     
