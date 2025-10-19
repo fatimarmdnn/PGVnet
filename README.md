@@ -42,7 +42,7 @@ PGVnet/
 
 ```
 
-> Only example data is included. The full dataset and trained models are hosted on [Zenodo](https://doi.org/10.5281/zenodo.xxxxx).
+> Only example data is included. The full dataset and trained models are hosted on [Zenodo](https://doi.org/10.5281/zenodo.15793386).
 
 ---
 
@@ -135,4 +135,4 @@ Some components were adapted from:
 
 If you use PGVnet in your research, please cite:
 
-> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/10.5281/zenodo.xxxxx
+> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/10.5281/zenodo.15793386
