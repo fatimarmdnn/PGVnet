@@ -18,7 +18,6 @@ env/
 # Data files
 *.npz
 *.npy
-data/
 
 # Logs and model checkpoints
 *.log
