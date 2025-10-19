@@ -36,12 +36,11 @@ pip install -r requirements.txt
 PGVnet/
 ├── data/                   # Example data (forward DB, reciprocal DB, trained XGBoost models, receiver coords) 
 ├── src/                    # Training and evaluation source code
-├── results/                # Checkpoints, predictions, plots, and metrics
-└── notebooks/              # Jupyter notebooks (Framework_Pipeline.ipynb)
+└── results/                # Checkpoints, predictions, plots, and metrics
 
 ```
 
-> Only example data is included. The full dataset and trained models are hosted on [Zenodo](https://doi.org/10.5281/zenodo.15793386).
+> The repository includes only a small example dataset so that results can be reproduced quickly. The full dataset and trained models are hosted on [Zenodo](https://doi.org/10.5281/zenodo.15793386).
 
 ---
 
