@@ -90,7 +90,7 @@ def test_step(inp_data, out_data, imnet, unet, config, device):
     hres_ref = out_data[:, pad_hr:-pad_hr, pad_hr:-pad_hr, :]
     lres_ref = inp_data[:, pad:-pad, pad:-pad, :]
 
-    stats_path = os.path.join(config.data_dir, f"data_stats_{config.data_tag}.npz")
+    stats_path = os.path.join(config.data_dir, f"data_stats_{config.stats_tag}.npz")
     pred_field, hres_ref = postprocess_output(pred_field, hres_ref, config, stats_path)
 
     return pred_field, hres_ref, lres_ref
