@@ -3,10 +3,9 @@
 ![PGVnet Pipeline](pgvnet.png)
 
 <p align="left">
-  <a href="https://github.com/fatimarmdnn/PGVnet/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/fatimarmdnn/PGVnet/ci.yml?label=CI&logo=github"></a>
   <img alt="Python" src="https://img.shields.io/badge/python-3.10+-blue">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
-  <a href="https://doi.org/10.5281/zenodo.xxxxx"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxx.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.15793386"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.15793386.svg"></a>
 </p>
 
 **PGVnet** is a machine learning framework that rapidly generates *physics-consistent* peak ground velocity (PGV) maps. 
