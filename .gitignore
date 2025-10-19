@@ -16,7 +16,6 @@ env/
 ./a.ipnyb
 
 # Data files
-*.npz
 *.npy
 
 # Logs and model checkpoints
