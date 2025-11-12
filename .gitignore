@@ -23,8 +23,6 @@ env/
 *.pth
 *.pt
 *.ckpt
-results/
-pgvtrial/
 
 # IDE and Editor folders
 .vscode/

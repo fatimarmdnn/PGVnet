@@ -34,13 +34,13 @@ pip install -r requirements.txt
 
 ```
 PGVnet/
-├── data/                   # Example data (forward DB, reciprocal DB, trained XGBoost models, receiver coords) 
+├── data/                   # Example data (forward DB, reciprocal DB, Step 1 preds, trained XGBoost models, receiver coords) 
 ├── src/                    # Training and evaluation source code
 └── results/                # Checkpoints, predictions, plots, and metrics
 
 ```
 
-> The repository includes only a small example dataset so that results can be reproduced quickly. The full dataset and trained models are hosted on [Zenodo](https://doi.org/10.5281/zenodo.15793386).
+> A reduced example dataset is included for demonstration. The complete dataset and pre-trained XGBoost models are available on [Zenodo](https://doi.org/10.5281/zenodo.15793386).
 
 ---
 
@@ -51,7 +51,7 @@ You can run PGVnet either from the notebook (`demo.ipynb`) or directly from the 
 ### Step 1 — Generate Sparse PGV Maps (XGBoost)
 
 ```bash
-python src/xgboost_predictor.py --models_dir data/xgb_models --data_tag 50_50 --spacing_km 4
+python -m src.pgvnet.xgboost_predictor --models_dir data/xgb_models --data_tag 10_50 --spacing_km 4
 ```
 
 This will:
@@ -67,7 +67,7 @@ This will:
 ### Step 2 — Train the Encoder-MLP Network
 
 ```bash
-python src/encoderMLP_predictor.py --mode train --data_tag 50_50_x4 --downsample_factor 4 
+python -m src.pgvnet.encoderMLP_predictor --mode train --data_tag 10_50_x4 --downsample_factor 4 
 ```
 
 This will:
@@ -85,7 +85,7 @@ This will:
 ### Evaluating on Held-Out Events
 
 ```bash
-python src/encoderMLP_predictor.py --mode test --data_tag 50_50_x4 --downsample_factor 4 --results_dir ./results/results_50_50
+python -m src.pgvnet.encoderMLP_predictor --mode test --data_tag 10_50_x4 --downsample_factor 4 --results_dir ./results/example_run
 ```
 
 This will:
