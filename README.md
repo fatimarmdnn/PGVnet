@@ -5,7 +5,7 @@
 <p align="left">
   <img alt="Python" src="https://img.shields.io/badge/python-3.10+-blue">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
-  <a href="https://doi.org/10.5281/zenodo.15793386"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.15793386.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.17592743"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.17592743.svg"></a>
 </p>
 
 **PGVnet** is a machine learning framework that rapidly generates *physics-consistent* peak ground velocity (PGV) maps. 
@@ -129,4 +129,4 @@ Some components were adapted from:
 
 If you use PGVnet in your research, please cite:
 
-> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/10.5281/zenodo.15793386
+> Ramadan F. et al. (2025). *PGVnet: A Machine Learning Framework for the Generation of Rapid, Physics-Consistent PGV Maps*. Zenodo. https://doi.org/10.5281/zenodo.17592743
